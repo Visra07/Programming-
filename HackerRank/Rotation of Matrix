@@ -1,0 +1,46 @@
+/*Given a 2D square matrix, rotate the matrix by 90 degrees in clockwise manner.*/
+
+//code
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    long int i,j,rows,cols,cases,casei,rc;
+    scanf("%ld",&cases);
+    for(casei=1;casei<=cases;casei++)
+    {
+        scanf("%ld",&rc);
+        long int mat[rc][rc],mat1[rc][rc];
+        for(rows=0;rows<rc;rows++)
+        {
+            for(cols=0;cols<rc;cols++)
+            {
+                scanf("%ld",&mat[rows][cols]);
+            }
+        }
+        for (i = 0; i<rc; i++) 
+            for (j = 0; j<rc; j++) 
+                mat1[i][j] = mat[j][i];  
+    
+        for (i = rc-1; i >=0; i--) 
+        { 
+            for (j = rc-1; j >=0; j--) 
+               mat[i][j]=mat1[i][j];
+             
+        } 
+        printf("Test Case #%ld:\n",casei);
+        for (i = 0; i <rc; i++) 
+        { 
+            for (j = rc-1; j >=0; j--)
+               printf("%ld ",mat[i][j]);
+             
+             printf("\n");
+        }
+    }
+    return 0;
+}
