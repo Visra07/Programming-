@@ -1,0 +1,28 @@
+//Given an array of integers, find the sum of the elements of the given array. 
+
+//code
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    long int cases, casei, noOfElements,sum,i;
+    scanf("%ld",&cases);
+    for(casei=0;casei<cases;casei++)
+    {
+        sum=0;
+        scanf("%ld",&noOfElements);
+        long int ele[noOfElements];
+        for(i=0;i<noOfElements;i++)
+        {
+            scanf("%ld",&ele[i]);
+            sum+=ele[i];
+        }
+        printf("%ld\n",sum);
+    }
+    return 0;
+}
